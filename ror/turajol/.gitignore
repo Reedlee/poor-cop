@@ -21,7 +21,7 @@
 .byebug_history
 
 #Ignore idea settings
-.idea/*
+.idea/
 
 #ignore .keep
 *.keep
