@@ -24,16 +24,24 @@ class ViewController: UIViewController {
     override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 42.875599, longitude: 74.614180, zoom: 16.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.settings.compassButton = true
+        mapView.settings.myLocationButton = true
         view = mapView
         
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
+        marker.position = CLLocationCoordinate2D(latitude: 42.875599, longitude: 74.614180)
+        marker.title = "ГАИ"
+        marker.snippet = "Осторожно, в этом районе есть ГАИ"
         marker.map = mapView
+        
+        let circleCenter = CLLocationCoordinate2D(latitude: 42.875599, longitude: 74.614180)
+        let circ = GMSCircle(position: circleCenter, radius: 400)
+        circ.fillColor = UIColor(red:1.00, green:0.20, blue:0.20, alpha:0.4)
+        circ.strokeWidth = 0
+        circ.map = mapView
     }
 
 }
