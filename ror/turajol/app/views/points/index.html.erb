@@ -1,0 +1,8 @@
+<div>
+  <% @points.each do |point| %>
+      <p>
+        <%= "Широта: #{point.latitude}" %>
+        <%= "Долгота: #{point.longitude}" %>
+      </p>
+  <% end %>
+</div>
