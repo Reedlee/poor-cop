@@ -1,8 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+#Ignore idea settings
+.idea/
+
+#ignore .keep
+*.keep
+
+
 *.iml
 .gradle
 /local.properties
-/.idea/workspace.xml
-/.idea/libraries
 .DS_Store
 /build
 /captures
