@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 #Ignore idea settings
 .idea/
+*/.idea/
 
 #ignore .keep
 *.keep
