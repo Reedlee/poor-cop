@@ -39,6 +39,12 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             print("Success is good!")
             let camera = GMSCameraPosition.camera(withLatitude: userLocation!.latitude, longitude: userLocation!.longitude, zoom: 16.0)
             myMap.camera = camera
+            
+            myMap.isMyLocationEnabled = true
+            myMap.settings.myLocationButton = true
+            
+            locationManager.stopUpdatingLocation()
+
         }
     }
     
