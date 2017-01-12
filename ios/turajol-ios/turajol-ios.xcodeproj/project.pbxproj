@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5461276768848A404A299E61 /* Pods_turajol_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E414B751941BC5585AFDF4A5 /* Pods_turajol_ios.framework */; };
 		9E27A7E81E14BEA200DB4D66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27A7E71E14BEA200DB4D66 /* AppDelegate.swift */; };
-		9E27A7EA1E14BEA200DB4D66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27A7E91E14BEA200DB4D66 /* ViewController.swift */; };
+		9E27A7EA1E14BEA200DB4D66 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27A7E91E14BEA200DB4D66 /* MapVC.swift */; };
 		9E27A7ED1E14BEA200DB4D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E27A7EB1E14BEA200DB4D66 /* Main.storyboard */; };
 		9E27A7EF1E14BEA200DB4D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E27A7EE1E14BEA200DB4D66 /* Assets.xcassets */; };
 		9E27A7F21E14BEA200DB4D66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E27A7F01E14BEA200DB4D66 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		30F2F7BE825661A563A24AA1 /* Pods-turajol-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-turajol-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-turajol-ios/Pods-turajol-ios.release.xcconfig"; sourceTree = "<group>"; };
 		9E27A7E41E14BEA200DB4D66 /* turajol-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "turajol-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E27A7E71E14BEA200DB4D66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9E27A7E91E14BEA200DB4D66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9E27A7E91E14BEA200DB4D66 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		9E27A7EC1E14BEA200DB4D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E27A7EE1E14BEA200DB4D66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E27A7F11E14BEA200DB4D66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				9E27A7E71E14BEA200DB4D66 /* AppDelegate.swift */,
-				9E27A7E91E14BEA200DB4D66 /* ViewController.swift */,
+				9E27A7E91E14BEA200DB4D66 /* MapVC.swift */,
 				9E27A7EB1E14BEA200DB4D66 /* Main.storyboard */,
 				9E27A7EE1E14BEA200DB4D66 /* Assets.xcassets */,
 				9E27A7F01E14BEA200DB4D66 /* LaunchScreen.storyboard */,
@@ -211,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E27A7EA1E14BEA200DB4D66 /* ViewController.swift in Sources */,
+				9E27A7EA1E14BEA200DB4D66 /* MapVC.swift in Sources */,
 				9E27A7E81E14BEA200DB4D66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +376,7 @@
 				9E27A7F81E14BEA200DB4D66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
