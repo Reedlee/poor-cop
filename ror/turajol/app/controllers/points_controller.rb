@@ -12,12 +12,17 @@ class PointsController < ApplicationController
   end
 
   def create
-    p params
     @point = Point.create(point_parameters)
     if @point.save
-      redirect_to root_path
+      respond_to do |format|
+        format.html{ redirect_to root_path }
+        format.json{ render action: 'index', status: :created  }
+      end
     else
-      render "new"
+      respond_to do |format|
+        format.html{ render action: "new" }
+        format.json{ render json: @player.errors, status: :unprocessable_entity }
+      end
     end
   end
 
