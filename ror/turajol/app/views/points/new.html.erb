@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Создать новую точку</title>
-</head>
-<body>
 <h1> New Point</h1>
 
 <%= form_for @point do |f| %>
-
-    <p>Долгота <br/><%= f.text_field :latitude  %></p>
-    <p>Широта  <br/><%= f.text_field :longitude  %></p>
-
-    <p><%= f.submit "Создать точку" %></p>
+  <p>
+    <%=	 f.label :lantitude, "Долгота" %>
+    <%= f.text_field :latitude %></p>
+  <p>
+    <%=	 f.label :longitude, "Широта" %>
+    <%= f.text_field :longitude  %>
+  </p>
+  <p><%= f.submit "Создать точку" %></p>
 <% end %>
-
-</body>
-</html>

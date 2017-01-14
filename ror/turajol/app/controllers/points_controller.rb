@@ -12,14 +12,12 @@ class PointsController < ApplicationController
   end
 
   def create
+    p params
     @point = Point.create(point_parameters)
-  # binding.pry
-    if @point.errors.empty?
-      render text: params.inspect
-      redirect_to point_path(@point)
+    if @point.save
+      redirect_to root_path
     else
-       render text: "error"
-       render "new"
+      render "new"
     end
   end
 
