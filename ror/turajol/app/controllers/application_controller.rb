@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  #TODO переделать чтобы была валидация приложений, которые отправляет координаты
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 end
