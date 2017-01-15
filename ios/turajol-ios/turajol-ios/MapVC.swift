@@ -9,19 +9,24 @@
 import UIKit
 import GoogleMaps
 
-class MapVC: UIViewController, CLLocationManagerDelegate {
+class MapVC: UIViewController, CLLocationManagerDelegate, MapPointsController {
 
     
     @IBOutlet weak var myMap: GMSMapView!
     
     private var locationManager = CLLocationManager()
+   
+    
     private var userLocation: CLLocationCoordinate2D?
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MapPointsHandler.Instance.delegate = self
+        MapPointsHandler.Instance.observePoints()
         initializeLocationManager()
+        
         
     }
     
@@ -36,23 +41,28 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         if let location = locationManager.location?.coordinate {
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             
-            print("Success is good!")
             let camera = GMSCameraPosition.camera(withLatitude: userLocation!.latitude, longitude: userLocation!.longitude, zoom: 16.0)
             myMap.camera = camera
             
             myMap.isMyLocationEnabled = true
             myMap.settings.myLocationButton = true
             
-            locationManager.stopUpdatingLocation()
+            
 
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func markOnMapByLocationBtn(_ sender: Any) {
+        if userLocation != nil {
+            MapPointsHandler.Instance.markPoint(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
+        }
     }
-
-
+    
+    func showNewPointOnMap(latitude: Double, longitude: Double) {
+        let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let marker = GMSMarker(position: position)
+        marker.title = "Осторожно ГАИ!"
+        marker.map = self.myMap
+    }
 }
 

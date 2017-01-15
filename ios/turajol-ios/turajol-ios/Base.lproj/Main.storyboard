@@ -24,17 +24,30 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAu-wW-iia" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DAu-wW-iia" secondAttribute="height" multiplier="25:36" id="mvW-ny-rHL"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueM-Ra-31C">
+                                <rect key="frame" x="117" y="560" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UUR-tj-v3W"/>
+                                    <constraint firstAttribute="width" constant="140" id="uRp-vg-wcm"/>
+                                </constraints>
+                                <state key="normal" title="Отметить на карте"/>
+                                <connections>
+                                    <action selector="markOnMapByLocationBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="44K-yp-60L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DAu-wW-iia" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ea0-QK-O62"/>
                             <constraint firstAttribute="trailing" secondItem="DAu-wW-iia" secondAttribute="trailing" id="IIp-pC-Aji"/>
+                            <constraint firstItem="ueM-Ra-31C" firstAttribute="top" secondItem="DAu-wW-iia" secondAttribute="bottom" constant="20" id="SUY-BH-Y54"/>
                             <constraint firstItem="DAu-wW-iia" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UQ0-Nr-Gyk"/>
+                            <constraint firstItem="ueM-Ra-31C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b6K-4Q-2Kb"/>
                         </constraints>
                     </view>
                     <connections>
