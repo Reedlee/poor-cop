@@ -6,7 +6,7 @@
 #ignore .keep
 *.keep
 
-
+#ignore iOS files
 *.iml
 .gradle
 /local.properties
@@ -14,3 +14,6 @@
 /build
 /captures
 .externalNativeBuild
+/ios/turajol-ios/Podfile.lock
+/ios/turajol-ios/Pods/
+/ios/turajol-ios/turajol-ios.xcworkspace/xcuserdata/samatbek.o.xcuserdatad/xcdebugger/
