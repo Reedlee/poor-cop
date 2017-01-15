@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MapVC: UIViewController, CLLocationManagerDelegate, MapPointsController {
+class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, MapPointsController {
 
     
     @IBOutlet weak var myMap: GMSMapView!
@@ -26,6 +26,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MapPointsController {
         MapPointsHandler.Instance.delegate = self
         MapPointsHandler.Instance.observePoints()
         initializeLocationManager()
+        myMap.delegate = self
         
         
     }
@@ -54,8 +55,26 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MapPointsController {
 
     @IBAction func markOnMapByLocationBtn(_ sender: Any) {
         if userLocation != nil {
-            MapPointsHandler.Instance.markPoint(latitude: Double(userLocation!.latitude), longitude: Double(userLocation!.longitude))
+            pointAlert(lat: userLocation!.latitude, long: userLocation!.longitude)
         }
+    }
+
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        pointAlert(lat: coordinate.latitude, long: coordinate.longitude)
+    }
+    
+    func pointAlert(lat: Double, long: Double)
+    {
+        let alert = UIAlertController(title: "Вы уверены что хотите отметить эту точку?", message: "latidude: \(lat) \nlongitude: \(long)", preferredStyle: .alert)
+        let accept = UIAlertAction(title: "Да", style: .default) { (alertAction: UIAlertAction) in
+            MapPointsHandler.Instance.markPoint(latitude: lat, longitude: long)
+        }
+        let cancel = UIAlertAction(title: "Нет", style: .default, handler: nil)
+        
+        alert.addAction(cancel)
+        alert.addAction(accept)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     func showNewPointOnMap(latitude: Double, longitude: Double) {
@@ -64,5 +83,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MapPointsController {
         marker.title = "Осторожно ГАИ!"
         marker.map = self.myMap
     }
+    
+
 }
 
