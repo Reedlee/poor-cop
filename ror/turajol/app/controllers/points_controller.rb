@@ -1,9 +1,11 @@
 class PointsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   def index
    @points = Point.all
     respond_to do |format|
       format.html
-      format.json {render json: @points.to_json(except: :id)}
+      format.json {render json: @points, status: :ok}
     end
   end
 
@@ -15,13 +17,13 @@ class PointsController < ApplicationController
     @point = Point.create(point_parameters)
     if @point.save
       respond_to do |format|
-        format.html{ redirect_to root_path }
-        format.json{ render action: 'index', status: :created  }
+        format.html{redirect_to root_path}
+        format.json{render json: Point.all, status: :created}
       end
     else
       respond_to do |format|
-        format.html{ render action: "new" }
-        format.json{ render json: @point.errors, status: :unprocessable_entity }
+        format.html{render action: "new"}
+        format.json{render json: @point.errors, status: 400}
       end
     end
   end
@@ -30,13 +32,13 @@ class PointsController < ApplicationController
     @point = Point.find(params[:id])
     if @point.destroy
       respond_to do|format|
-        format.html{ redirect_to root_path}
-        format.json{render action: 'index', status: :deleted}
+        format.html{redirect_to root_path}
+        format.json{render json: Point.all, status: :accepted}
       end
     else
       respond_to do|format|
-        format.html{redirect_to root_path}
-        format.json{render json: {message:'cannot delete'}, status: :unprocessable_entity}
+        format.html{redirect_to root_path, notice: 'not found'}
+        format.json{render json: @point.errors, status: 500}
       end
     end
   end
@@ -45,5 +47,9 @@ class PointsController < ApplicationController
 
   def point_parameters
     params.require(:point).permit(:latitude, :longitude)
+  end
+
+  def not_found
+    render json: { message: "point: '#{params[:id]}' not found" }, status: 404
   end
 end
