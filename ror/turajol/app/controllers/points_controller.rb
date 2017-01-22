@@ -16,11 +16,13 @@ class PointsController < ApplicationController
   def create
     @point = Point.create(point_parameters)
     if @point.save
+      flash[:success] = 'Точка успешно добавлена'
       respond_to do |format|
         format.html{redirect_to root_path}
         format.json{render json: Point.all, status: :created}
       end
     else
+      flash[:error] = "Не удалось добавить точку"
       respond_to do |format|
         format.html{render action: "new"}
         format.json{render json: @point.errors, status: 400}
@@ -31,11 +33,13 @@ class PointsController < ApplicationController
   def destroy
     @point = Point.find(params[:id])
     if @point.destroy
+      flash[:notice] = 'Точка успешно удалена'
       respond_to do|format|
         format.html{redirect_to root_path}
         format.json{render json: Point.all, status: :accepted}
       end
     else
+      flash[:error] = "Не удалось удалить точку"
       respond_to do|format|
         format.html{redirect_to root_path, notice: 'not found'}
         format.json{render json: @point.errors, status: 500}
