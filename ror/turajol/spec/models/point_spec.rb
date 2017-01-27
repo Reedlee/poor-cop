@@ -6,6 +6,10 @@ RSpec.describe Point, type: :model do
     @point2 = Point.new
   end
 
+  it 'should not get deleted points' do
+    pending('TODO active points')
+  end
+
   context 'check presence' do
     it 'latitude should be presented' do
       @point1.longitude = '74.612757'

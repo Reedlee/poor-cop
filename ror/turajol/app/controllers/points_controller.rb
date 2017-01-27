@@ -2,7 +2,7 @@ class PointsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def index
-   @points = Point.all
+   @points = Point.active
     respond_to do |format|
       format.html
       format.json {render json: @points, status: :ok}
@@ -32,7 +32,8 @@ class PointsController < ApplicationController
 
   def destroy
     @point = Point.find(params[:id])
-    if @point.destroy
+    @point.deleted_at = Time.now
+    if @point.save
       flash[:notice] = 'Точка успешно удалена'
       respond_to do|format|
         format.html{redirect_to root_path}

@@ -7,4 +7,6 @@ class Point < ApplicationRecord
 
   validates :latitude, format: {with: FORMAT_COORDINATES, message: MESSAGE_ERORR_FORMAT}
   validates :longitude, format: {with: FORMAT_COORDINATES, message: MESSAGE_ERORR_FORMAT}
+
+  scope :active, -> { where(deleted_at: nil) }
 end
