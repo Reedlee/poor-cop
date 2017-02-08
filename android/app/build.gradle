@@ -33,4 +33,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.github.MKergall:osmbonuspack:6.0'
     compile 'org.osmdroid:osmdroid-android:5.5:release@aar'
+    compile 'com.google.firebase:firebase-database:9.6.1'
 }
+apply plugin: 'com.google.gms.google-services'

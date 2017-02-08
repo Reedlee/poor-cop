@@ -2,409 +2,301 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_9f5b38f7797b4a71672237262ed7fd00a957cb7a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.github.MKergall/osmbonuspack/6.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3110ac711c3cb1f430846664e378a0010b83c8ca">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.github.MKergall-osmbonuspack-6.0_5ab195e24072d8c66ff5bdcd7a40f0dc7b016b05.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_934cacf8b7fa8eecdb6debc21f3f16bb6885f464.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/programs/as/gradle/m2repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/commons-lang3-3.3.2_d141f06e8e7290405a7cf38335beae428bb2b07a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_67baa204c212672fc4fa57c7fc59e61547852a0b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.2.1_9ea95c2ceedfb054c877e6c3fb82ec2866e73411.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_86155a794014be378023f7d08673ddc79c607f6c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/okio-1.9.0_3318a0773fc53bbeb2d1bbc58262da91be871703.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_52193fe2c2a870c9d25f0aff0751f7d065ee42f3.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_57955d2bf09ceea39a9445283569e6321f5ed6eb.jar" />
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_57955d2bf09ceea39a9445283569e6321f5ed6eb/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.github.MKergall/osmbonuspack/6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_fd20dff9fc6b1563db6a0c99b9d8124bf593ffc9.jar" />
+        sha1="3110ac711c3cb1f430846664e378a0010b83c8ca">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.MKergall-osmbonuspack-6.0_5ab195e24072d8c66ff5bdcd7a40f0dc7b016b05/classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.2.1_9830f82262c169f259668fe4fdde48e3f6f3e36b.jar" />
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_9830f82262c169f259668fe4fdde48e3f6f3e36b/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_69615234ffe504363898122f642afd66febd2db2.jar" />
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_52193fe2c2a870c9d25f0aff0751f7d065ee42f3/classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a1c351dc10b92d638da57f3a6513f87cfbdc9f83">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.6.1_919d78002805eb68ccd954316891ec4c62adced5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4a36600281a648769411ef642c331851732bf29e">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.6.1_84831e91c32b509829bebaa0849c8ac91269d072/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_5802f04b66f5d1ec003a88f5d52a105ea06b28fc.jar" />
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5802f04b66f5d1ec003a88f5d52a105ea06b28fc/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        is-multidex="true"
+        jar="/home/myrzabek/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_038d5e61b4cb4c563ec7f097f8f2e810d20fb92a.jar" />
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.9.0_3318a0773fc53bbeb2d1bbc58262da91be871703/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.2.1_78338dcf7ece2b9dcc5867170f5aa004c8d4358c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_d03876eaceeb897bc5b3d310baaff6deb4f5a52e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_5c4efb71a92b6ea4a06a2cd7f1d83e91a9ec2a24.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/programs/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_2f3bf2b9a6b02cb156868dbc4e63b7bf0565f976.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_1283303289c670fe76bbc18c61ce8f25187e7744.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_aca66175a2ed22e6adeb504160b74d75bce5b400.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d4f3b28c81f19eb8e34325bea35c0fc9324d1769">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_cd65c8c16a9638d896e5f7d3d31f1b62725a0187.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_6118bfb8af1c717f10692b67d587434d23b4ae5b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_05a2ba10dee92c314f5f1d79836a2ff97b351678.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.github.MKergall/osmbonuspack/6.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3110ac711c3cb1f430846664e378a0010b83c8ca">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.github.MKergall-osmbonuspack-6.0_8d45fe9e0fa156149876b0b7ab51308249a90284.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/org.osmdroid/osmdroid-android/5.5/release/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="27817500586893687f35a2d97b2c5c39a6e56011">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/osmdroid-android-5.5-release_222dd1e51e4c1311d693591e8e6990001ebb7b30.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.2.1_e0e2262c7630ed6db1aeff2ce40e13a241fe1f15.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_86cccb5dfabf4e62811018041541809021abefde.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_481c78b0d765d2df66fe550afa4bfc5816667d76.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_7d2e3b9d6d8338eae30cb22123ac0dbc4655798e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_1f83ae09fed15ea8fd184e5018804f2c44d39d28.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/org.osmdroid/osmdroid-android/5.5/release/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="27817500586893687f35a2d97b2c5c39a6e56011">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/osmdroid-android-5.5-release_fa95dbaca082a7ce5182aca74fad0eea4f7de256.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/gson-2.7_19251220ea435aa2eec0440214b39b7b0c8e7955.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_5100e42f8d1aa31270466dee1fd72d1fd37497a2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_53c4a21f58e417663bf7f457730cd1b418f1972c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7889a2933c206035b7e08b32f4d61ad03b96822e">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/instant-run_149e1eb22d2167bbad611a7371d0d3dea86e596e.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_858e0dd0831ccc930cebb0a4d97350d8a3ae7db5.jar" />
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_858e0dd0831ccc930cebb0a4d97350d8a3ae7db5/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_6aa3153a31536bd750f9e5e9ffff9a06616d285c.jar" />
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_69615234ffe504363898122f642afd66febd2db2/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d618094cf2ee67f9a4df3df72549ac27f3e17db7">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_d712c3e004b28a0883946860309f78b419de3873.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_6900c9d24de76783f22ef3ecb85cf75f6e13b579.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_602406929491df96f3cb59ea83d59a798c5b2ba8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_0a5791755954a16dff42b0c7c6bc256dca58fffb.jar" />
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_86cccb5dfabf4e62811018041541809021abefde/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_957d1729aa3e54ede62d85f9dfc085182b48928e.jar" />
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_fd20dff9fc6b1563db6a0c99b9d8124bf593ffc9/classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="/programs/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_2f3bf2b9a6b02cb156868dbc4e63b7bf0565f976/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_e0e2262c7630ed6db1aeff2ce40e13a241fe1f15/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ac8365c87591065db07f7bac8551504504832cd4">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.6.1_5553221d7f5a688a69470464252cae40e49a089f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/programs/as/gradle/m2repository/org/apache/commons/commons-lang3/3.3.2/commons-lang3-3.3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/commons-lang3-3.3.2_d141f06e8e7290405a7cf38335beae428bb2b07a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0efd1b44f47c134fb245914a1d54a55adbfc2f8d">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.6.1_ffae68f4334e6eba44483c1aeefdee5f60d03b26/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b75ecdd04a37d31b4a0da2729fc5c558962a529b">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.6.1_aef5a9805a313bcb222c7a2ef1e302d4d1f548c8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1e14ebe1cda8491f152083e752ca5bf73cd37bff">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.6.1_b720a052ba481f19982a513343b3b6a9f85253e6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5c4efb71a92b6ea4a06a2cd7f1d83e91a9ec2a24/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_481c78b0d765d2df66fe550afa4bfc5816667d76/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="eccaaa9ffa6bb4bfbd2e870f01aaf69655d353be">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.6.1_429a78dd63dbc4da52bc8811f6c1bff23c9b8bf8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_1f83ae09fed15ea8fd184e5018804f2c44d39d28/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3033ab762053db014de3d5ede66c85219a681863">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_149e1eb22d2167bbad611a7371d0d3dea86e596e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.6.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1ef72e72bc0d05602c366582afa9439f58bb31d6">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.6.1_a8fb75582d5dfdd8af0b0fe2743bbce3ae2722bf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_19251220ea435aa2eec0440214b39b7b0c8e7955/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_53c4a21f58e417663bf7f457730cd1b418f1972c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_1283303289c670fe76bbc18c61ce8f25187e7744/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/org.osmdroid/osmdroid-android/5.5/release/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="27817500586893687f35a2d97b2c5c39a6e56011">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/osmdroid-android-5.5-release_fa95dbaca082a7ce5182aca74fad0eea4f7de256/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_e27235b8a44066a58bc0a5380e5d5d67748db531.jar" />
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_e27235b8a44066a58bc0a5380e5d5d67748db531/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/myrzabek/Documents/TuraJol/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b5facc1fb8ca8f87b199bd0a2b398ecfd8da1c1d">
-        <dex dex="/home/myrzabek/Documents/TuraJol/app/build/intermediates/pre-dexed/debug/instant-run_f5ef738fef755df30766099a49ffb438dec4084e.jar" />
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_67baa204c212672fc4fa57c7fc59e61547852a0b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="55581cc97a94e84e458195abcc17926f0e57d89d">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d712c3e004b28a0883946860309f78b419de3873/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/myrzabek/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/home/myrzabek/Documents/TuraJol/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.4.1_934cacf8b7fa8eecdb6debc21f3f16bb6885f464/classes.dex" />
     </item>
 
 </items>

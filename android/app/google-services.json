@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "696001404527",
+    "firebase_url": "https://turajol-2d2f5.firebaseio.com",
+    "project_id": "turajol-2d2f5",
+    "storage_bucket": "turajol-2d2f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696001404527:android:40be63eda8bf443f",
+        "android_client_info": {
+          "package_name": "com.example.mkylychev.turajol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696001404527-53bfokn1agluh6mau6o9po002vbjab0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB176LTd0oJPoOAZ4qJDe2iMC47BSnaphs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

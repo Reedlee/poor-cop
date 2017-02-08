@@ -18,6 +18,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.osmdroid.api.IMapController;
 import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -38,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     Timer timer =new Timer();
     TimerTask timerTask;
     TimerTask timerTaskForTimer;
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference mMessagesDatabaseReference;
+    private ChildEventListener mChildEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +57,11 @@ public class MainActivity extends AppCompatActivity {
         org.osmdroid.tileprovider.constants.OpenStreetMapTileProviderConstants.setUserAgentValue(BuildConfig.APPLICATION_ID);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("geopoints");
         map = (MapView) findViewById(R.id.map);
         initMap();
+        getPointsFromFireBaseDB();
         setTimer();
     }
 
@@ -104,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
                         cop.setTitle("Здесь гаишник");
                         cop.setIcon(getResources().getDrawable(R.mipmap.police));
                         cop.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                        OwnGeoPoint ownGeoPoint=new OwnGeoPoint(geoPoint.getLatitude(),geoPoint.getLongitude());
+                        mMessagesDatabaseReference.push().setValue(ownGeoPoint);
                         map.getOverlays().add(cop);
                         map.invalidate();
                     }
@@ -131,7 +145,43 @@ public class MainActivity extends AppCompatActivity {
         map.invalidate();
 
     }
+        private void getPointsFromFireBaseDB(){
+            mChildEventListener=new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    OwnGeoPoint ownGeoPoint=dataSnapshot.getValue(OwnGeoPoint.class);
+                    Marker cop=new Marker(map);
+                    GeoPoint geoPoint=new GeoPoint(ownGeoPoint.getLatitude(),ownGeoPoint.getLongitude());
+                    cop.setPosition(geoPoint);
+                    cop.setTitle("Здесь гаишник");
+                    cop.setIcon(getResources().getDrawable(R.mipmap.police));
+                    cop.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                    map.getOverlays().add(cop);
+                    map.invalidate();
+                }
 
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            };
+            mMessagesDatabaseReference.addChildEventListener(mChildEventListener);
+        }
     public GPSTracker addMyLocationMarker(){ //2в1-вычисляет координаты пользователя и обозначает маркером его местоположение на карте
         GPSTracker gps=getMyLocation();
         GeoPoint myLocationPoint=new GeoPoint(gps.getLatitude(),gps.getLongitude());
