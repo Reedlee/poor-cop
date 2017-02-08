@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225155949) do
+ActiveRecord::Schema.define(version: 20170127150836) do
 
   create_table "points", force: :cascade do |t|
     t.string   "latitude",   null: false
     t.string   "longitude",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
 end

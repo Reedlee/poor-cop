@@ -3,6 +3,10 @@
       <p>
         <%= "Широта: #{point.latitude}" %>
         <%= "Долгота: #{point.longitude}" %>
+        <%= link_to "Удалить точку", point_path(point), method: :delete  %>
       </p>
   <% end %>
+</div>
+<div>
+  <%=	link_to "Добавить точку", new_point_path  %>
 </div>
