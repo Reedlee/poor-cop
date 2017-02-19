@@ -42,8 +42,8 @@ class PointsController < ApplicationController
     else
       flash[:error] = "Не удалось подтвердить точку"
       respond_to do |format|
-        format.html{render action: "new"}
-        format.json{render json: @point.errors, status: 400}
+        format.html{render redirect_to root_path}
+        format.json{render json: @point.errors, status: 404}
       end
     end
   end

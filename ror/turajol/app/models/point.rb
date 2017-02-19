@@ -11,6 +11,6 @@ class Point < ApplicationRecord
   scope :active, -> { where(deleted_at: nil) }
 
   def increase_counter
-    self[:counter] += 1
+    self[:counter] += 1 if self[:deleted_at].nil?
   end
 end
