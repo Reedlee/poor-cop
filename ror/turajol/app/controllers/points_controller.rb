@@ -14,15 +14,33 @@ class PointsController < ApplicationController
   end
 
   def create
-    @point = Point.create(point_parameters)
+    @point = Point.create(point_params)
     if @point.save
       flash[:success] = 'Точка успешно добавлена'
       respond_to do |format|
         format.html{redirect_to root_path}
-        format.json{render json: Point.all, status: :created}
+        format.json{render json: Point.active, status: :created}
       end
     else
       flash[:error] = "Не удалось добавить точку"
+      respond_to do |format|
+        format.html{render action: "new"}
+        format.json{render json: @point.errors, status: 400}
+      end
+    end
+  end
+
+  def confirm
+    @point = Point.find(params[:id])
+    @point.increase_counter
+    if @point.save
+      flash[:success] = 'Точка успешно подтверждена'
+      respond_to do |format|
+        format.html{redirect_to root_path}
+        format.json{render json: Point.active, status: :created}
+      end
+    else
+      flash[:error] = "Не удалось подтвердить точку"
       respond_to do |format|
         format.html{render action: "new"}
         format.json{render json: @point.errors, status: 400}
@@ -50,7 +68,7 @@ class PointsController < ApplicationController
 
   private
 
-  def point_parameters
+  def point_params
     params.require(:point).permit(:latitude, :longitude)
   end
 

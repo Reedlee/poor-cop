@@ -9,4 +9,8 @@ class Point < ApplicationRecord
   validates :longitude, format: {with: FORMAT_COORDINATES, message: MESSAGE_ERORR_FORMAT}
 
   scope :active, -> { where(deleted_at: nil) }
+
+  def increase_counter
+    self[:counter] += 1
+  end
 end
