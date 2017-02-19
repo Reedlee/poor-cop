@@ -17,6 +17,7 @@
 		9E27A7F21E14BEA200DB4D66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E27A7F01E14BEA200DB4D66 /* LaunchScreen.storyboard */; };
 		9E8C2C8E1E27E4AF007A06EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C2C8D1E27E4AF007A06EA /* Constants.swift */; };
 		9E8C2C901E27E608007A06EA /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C2C8F1E27E608007A06EA /* DBProvider.swift */; };
+		9EB9388D1E346D2800370FE5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9388C1E346D2800370FE5 /* Point.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9E27A7F31E14BEA200DB4D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E8C2C8D1E27E4AF007A06EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9E8C2C8F1E27E608007A06EA /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
+		9EB9388C1E346D2800370FE5 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		E414B751941BC5585AFDF4A5 /* Pods_turajol_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_turajol_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C34F18630BA814A3B70F3B /* Pods-turajol-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-turajol-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-turajol-ios/Pods-turajol-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9E8C2C8D1E27E4AF007A06EA /* Constants.swift */,
+				9EB9388C1E346D2800370FE5 /* Point.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				TargetAttributes = {
 					9E27A7E31E14BEA200DB4D66 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AWXA559AVD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,6 +262,7 @@
 			files = (
 				9E8C2C901E27E608007A06EA /* DBProvider.swift in Sources */,
 				9E27A7EA1E14BEA200DB4D66 /* MapVC.swift in Sources */,
+				9EB9388D1E346D2800370FE5 /* Point.swift in Sources */,
 				9E8C2C8E1E27E4AF007A06EA /* Constants.swift in Sources */,
 				9E22A63A1E2B1F5F0047C2A3 /* MapPointsHandler.swift in Sources */,
 				9E27A7E81E14BEA200DB4D66 /* AppDelegate.swift in Sources */,
@@ -384,6 +389,7 @@
 			baseConfigurationReference = F8C34F18630BA814A3B70F3B /* Pods-turajol-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AWXA559AVD;
 				INFOPLIST_FILE = "turajol-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nesamat.turajol-ios";
@@ -397,6 +403,7 @@
 			baseConfigurationReference = 30F2F7BE825661A563A24AA1 /* Pods-turajol-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AWXA559AVD;
 				INFOPLIST_FILE = "turajol-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nesamat.turajol-ios";

@@ -10,7 +10,7 @@ import Foundation
 
 class Constants {
     // DBProvider
-    static let MAP_POINTS = "Map_Points"
+    static let MAP_POINTS = "geopoints"
     
     // Cop handler 
     static let LATITUDE = "latitude"

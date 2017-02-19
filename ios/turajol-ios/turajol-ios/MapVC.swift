@@ -16,8 +16,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
     
     private var locationManager = CLLocationManager()
    
-    
     private var userLocation: CLLocationCoordinate2D?
+    
+    private var timer = Timer()
     
     
     
@@ -27,6 +28,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         MapPointsHandler.Instance.observePoints()
         initializeLocationManager()
         myMap.delegate = self
+        
+        
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(MapVC.notification), userInfo: nil, repeats: true)
         
         
     }
@@ -42,14 +46,13 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         if let location = locationManager.location?.coordinate {
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             
-            let camera = GMSCameraPosition.camera(withLatitude: userLocation!.latitude, longitude: userLocation!.longitude, zoom: 16.0)
+            let camera = GMSCameraPosition.camera(withLatitude: userLocation!.latitude, longitude: userLocation!.longitude, zoom: 16)
             myMap.camera = camera
             
             myMap.isMyLocationEnabled = true
             myMap.settings.myLocationButton = true
-            
-            
-
+            myMap.settings.zoomGestures = true
+            myMap.settings.allowScrollGesturesDuringRotateOrZoom = true
         }
     }
 
@@ -57,6 +60,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         if userLocation != nil {
             pointAlert(lat: userLocation!.latitude, long: userLocation!.longitude)
         }
+        
     }
 
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
@@ -81,9 +85,47 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let marker = GMSMarker(position: position)
         marker.title = "Осторожно ГАИ!"
+        marker.icon = UIImage(named: "police")
         marker.map = self.myMap
     }
     
+    
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        marker.map = nil
+        return true
+    }
+    
+    func notification() {
+        if let location = locationManager.location?.coordinate {
+            let userCoordinate = CLLocation(latitude: location.latitude, longitude: location.longitude)
+            print("\(location.latitude) \(location.longitude)")
+            
+            for point in MapPointsHandler.Instance.points {
+                let pointCoordinate = CLLocation(latitude: point.latitude, longitude: point.longitude)
+                print("\(point.latitude) \(point.longitude)")
+                let distanceInMeters = userCoordinate.distance(from: pointCoordinate)
+                
+                
+                print("DISTANCE: \(distanceInMeters)")
+                
+                if distanceInMeters < 200 {
+                    notificationAlert(distance: Double(distanceInMeters))
+                }
+            }
+        }
+    }
+    
+    func notificationAlert(distance: Double)
+    {
+        let alert = UIAlertController(title: "Поблизости ГАИ", message: "На растоянии \(round(distance)) метров находится ГАИ!", preferredStyle: .alert)
 
+        let ok = UIAlertAction(title: "Ок", style: .default, handler: nil)
+        
+        alert.addAction(ok)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 

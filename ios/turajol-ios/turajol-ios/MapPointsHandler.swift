@@ -23,6 +23,9 @@ class MapPointsHandler {
         return _instance
     }
     
+    
+    var points = [Point]()
+    
     weak var delegate: MapPointsController?
     
     // New point on map
@@ -33,6 +36,8 @@ class MapPointsHandler {
                 if let lat = data[Constants.LATITUDE] as? Double {
                     if let long = data[Constants.LONGITUDE] as? Double {
                         self.delegate?.showNewPointOnMap(latitude: lat, longitude: long)
+                        let point = Point(id: snapshot.key, latitude: lat, longitude: long)
+                        self.points.append(point)
                     }
                 }
             }
