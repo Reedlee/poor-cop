@@ -63,6 +63,15 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         
     }
 
+    @IBAction func logout(_ sender: Any) {
+        if AuthProvider.Instance.logOut() {
+            dismiss(animated: true, completion: nil)
+        } else {
+            alertTheUser(title: "Could not logout", message: "We could not logout at the moment, please try again later")
+        }
+    }
+    
+    
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         pointAlert(lat: coordinate.latitude, long: coordinate.longitude)
     }
@@ -100,31 +109,24 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
     func notification() {
         if let location = locationManager.location?.coordinate {
             let userCoordinate = CLLocation(latitude: location.latitude, longitude: location.longitude)
-            print("\(location.latitude) \(location.longitude)")
-            
+
             for point in MapPointsHandler.Instance.points {
                 let pointCoordinate = CLLocation(latitude: point.latitude, longitude: point.longitude)
-                print("\(point.latitude) \(point.longitude)")
-                let distanceInMeters = userCoordinate.distance(from: pointCoordinate)
+                let distanceInMeters = Double(userCoordinate.distance(from: pointCoordinate))
                 
-                
-                print("DISTANCE: \(distanceInMeters)")
-                
-                if distanceInMeters < 200 {
-                    notificationAlert(distance: Double(distanceInMeters))
+                if distanceInMeters < 200.0 {
+                    alertTheUser(title: "Поблизости ГАИ", message: "На растоянии \(round(distanceInMeters)) метров находится ГАИ!")
                 }
             }
         }
     }
     
-    func notificationAlert(distance: Double)
+    func alertTheUser(title: String, message: String)
     {
-        let alert = UIAlertController(title: "Поблизости ГАИ", message: "На растоянии \(round(distance)) метров находится ГАИ!", preferredStyle: .alert)
-
-        let ok = UIAlertAction(title: "Ок", style: .default, handler: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "ОK", style: .default, handler: nil)
         
         alert.addAction(ok)
-        
         present(alert, animated: true, completion: nil)
     }
 }

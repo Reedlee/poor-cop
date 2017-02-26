@@ -26,5 +26,15 @@ class DBProvider {
         return dbRef.child(Constants.MAP_POINTS)
     }
     
+    var usersRef: FIRDatabaseReference {
+        return dbRef.child(Constants.USERS)
+    }
+    
+    func saveUser(withID: String, email: String, password: String) {
+        let data: Dictionary<String, String> = [Constants.EMAIL: email, Constants.PASSWORD: password]
+        
+        usersRef.child(withID).child(Constants.DATA).setValue(data)
+    }
+    
     
 }
