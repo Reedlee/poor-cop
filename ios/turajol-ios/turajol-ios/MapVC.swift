@@ -9,28 +9,29 @@
 import UIKit
 import GoogleMaps
 
-class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, MapPointsController {
+class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
-    
     @IBOutlet weak var myMap: GMSMapView!
-    
     private var locationManager = CLLocationManager()
-   
     private var userLocation: CLLocationCoordinate2D?
     
-    private var timer = Timer()
-    
+    private var points = [Point]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MapPointsHandler.Instance.delegate = self
-        MapPointsHandler.Instance.observePoints()
+        
+        ServerManager.Instance.getPoints({ (points) in
+            self.points = points.values
+            self.displayAllPoints()
+            
+        }) { (error) in
+            print(error)
+        }
+
         initializeLocationManager()
+        
         myMap.delegate = self
-        
-        
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(10), target: self, selector: #selector(MapVC.notification), userInfo: nil, repeats: true)
         
         
     }
@@ -57,20 +58,12 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
     }
 
     @IBAction func markOnMapByLocationBtn(_ sender: Any) {
-        if userLocation != nil {
-            pointAlert(lat: userLocation!.latitude, long: userLocation!.longitude)
-        }
-        
+        pointAlert(lat: userLocation!.latitude, long: userLocation!.longitude)
     }
 
     @IBAction func logout(_ sender: Any) {
-        if AuthProvider.Instance.logOut() {
-            dismiss(animated: true, completion: nil)
-        } else {
-            alertTheUser(title: "Could not logout", message: "We could not logout at the moment, please try again later")
-        }
+
     }
-    
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         pointAlert(lat: coordinate.latitude, long: coordinate.longitude)
@@ -78,9 +71,18 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
     
     func pointAlert(lat: Double, long: Double)
     {
-        let alert = UIAlertController(title: "Вы уверены что хотите отметить эту точку?", message: "latidude: \(lat) \nlongitude: \(long)", preferredStyle: .alert)
+        let title = "Вы уверены что хотите отметить эту точку?"
+        let message = "latidude: \(lat) \nlongitude: \(long)"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
         let accept = UIAlertAction(title: "Да", style: .default) { (alertAction: UIAlertAction) in
-            MapPointsHandler.Instance.markPoint(latitude: lat, longitude: long)
+            ServerManager.Instance.createPoint(latitude: lat, longitude: long, completion: { (points) in
+                self.points = points.values
+                self.displayAllPoints()
+            }, error: { (error) in
+                print(error)
+            })
         }
         let cancel = UIAlertAction(title: "Нет", style: .default, handler: nil)
         
@@ -90,14 +92,15 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         present(alert, animated: true, completion: nil)
     }
     
-    func showNewPointOnMap(latitude: Double, longitude: Double) {
-        let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let marker = GMSMarker(position: position)
-        marker.title = "Осторожно ГАИ!"
-        marker.icon = UIImage(named: "police")
-        marker.map = self.myMap
+    func displayAllPoints() {
+        for point in points {
+            let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+            let marker = GMSMarker(position: position)
+            marker.title = "Осторожно ГАИ!"
+            marker.icon = UIImage(named: "police")
+            marker.map = self.myMap
+        }
     }
-    
     
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -106,20 +109,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         return true
     }
     
-    func notification() {
-        if let location = locationManager.location?.coordinate {
-            let userCoordinate = CLLocation(latitude: location.latitude, longitude: location.longitude)
-
-            for point in MapPointsHandler.Instance.points {
-                let pointCoordinate = CLLocation(latitude: point.latitude, longitude: point.longitude)
-                let distanceInMeters = Double(userCoordinate.distance(from: pointCoordinate))
-                
-                if distanceInMeters < 200.0 {
-                    alertTheUser(title: "Поблизости ГАИ", message: "На растоянии \(round(distanceInMeters)) метров находится ГАИ!")
-                }
-            }
-        }
-    }
     
     func alertTheUser(title: String, message: String)
     {

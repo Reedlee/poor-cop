@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5461276768848A404A299E61 /* Pods_turajol_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E414B751941BC5585AFDF4A5 /* Pods_turajol_ios.framework */; };
-		9E22A63A1E2B1F5F0047C2A3 /* MapPointsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22A6391E2B1F5F0047C2A3 /* MapPointsHandler.swift */; };
+		9E1D04A81E6C5CCC00D1D6A5 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1D04A71E6C5CCC00D1D6A5 /* ServerManager.swift */; };
 		9E27A7E81E14BEA200DB4D66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27A7E71E14BEA200DB4D66 /* AppDelegate.swift */; };
 		9E27A7EA1E14BEA200DB4D66 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27A7E91E14BEA200DB4D66 /* MapVC.swift */; };
 		9E27A7ED1E14BEA200DB4D66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E27A7EB1E14BEA200DB4D66 /* Main.storyboard */; };
@@ -16,16 +16,13 @@
 		9E27A7F21E14BEA200DB4D66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E27A7F01E14BEA200DB4D66 /* LaunchScreen.storyboard */; };
 		9E69D3D11E59854900C70FC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E69D3D01E59854900C70FC6 /* GoogleService-Info.plist */; };
 		9E8C2C8E1E27E4AF007A06EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C2C8D1E27E4AF007A06EA /* Constants.swift */; };
-		9E8C2C901E27E608007A06EA /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8C2C8F1E27E608007A06EA /* DBProvider.swift */; };
-		9EB9388D1E346D2800370FE5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9388C1E346D2800370FE5 /* Point.swift */; };
 		9EBB92A61E59665F002F79C4 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB92A51E59665F002F79C4 /* SigninVC.swift */; };
-		9EBB92A81E5968D7002F79C4 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB92A71E5968D7002F79C4 /* AuthProvider.swift */; };
-		9EFE70B71E6C049F005D3FFB /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFE70B61E6C049F005D3FFB /* ServerManager.swift */; };
+		9EFE70B91E6C0BBD005D3FFB /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFE70B81E6C0BBD005D3FFB /* Points.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30F2F7BE825661A563A24AA1 /* Pods-turajol-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-turajol-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-turajol-ios/Pods-turajol-ios.release.xcconfig"; sourceTree = "<group>"; };
-		9E22A6391E2B1F5F0047C2A3 /* MapPointsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointsHandler.swift; sourceTree = "<group>"; };
+		9E1D04A71E6C5CCC00D1D6A5 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		9E27A7E41E14BEA200DB4D66 /* turajol-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "turajol-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E27A7E71E14BEA200DB4D66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E27A7E91E14BEA200DB4D66 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -35,11 +32,8 @@
 		9E27A7F31E14BEA200DB4D66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E69D3D01E59854900C70FC6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E8C2C8D1E27E4AF007A06EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9E8C2C8F1E27E608007A06EA /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
-		9EB9388C1E346D2800370FE5 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		9EBB92A51E59665F002F79C4 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
-		9EBB92A71E5968D7002F79C4 /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
-		9EFE70B61E6C049F005D3FFB /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		9EFE70B81E6C0BBD005D3FFB /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 		E414B751941BC5585AFDF4A5 /* Pods_turajol_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_turajol_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C34F18630BA814A3B70F3B /* Pods-turajol-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-turajol-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-turajol-ios/Pods-turajol-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				9EFE70B51E6C048B005D3FFB /* Plugins */,
-				9E8C2C8C1E27E3D5007A06EA /* Firebase Plugins  */,
 				9E8C2C8B1E27E3CB007A06EA /* Model */,
 				9E8C2C8A1E27E3C6007A06EA /* View */,
 				9E8C2C891E27E3BA007A06EA /* Controller */,
@@ -112,25 +105,15 @@
 			isa = PBXGroup;
 			children = (
 				9E8C2C8D1E27E4AF007A06EA /* Constants.swift */,
-				9EB9388C1E346D2800370FE5 /* Point.swift */,
+				9EFE70B81E6C0BBD005D3FFB /* Points.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		9E8C2C8C1E27E3D5007A06EA /* Firebase Plugins  */ = {
-			isa = PBXGroup;
-			children = (
-				9E8C2C8F1E27E608007A06EA /* DBProvider.swift */,
-				9E22A6391E2B1F5F0047C2A3 /* MapPointsHandler.swift */,
-				9EBB92A71E5968D7002F79C4 /* AuthProvider.swift */,
-			);
-			name = "Firebase Plugins ";
 			sourceTree = "<group>";
 		};
 		9EFE70B51E6C048B005D3FFB /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				9EFE70B61E6C049F005D3FFB /* ServerManager.swift */,
+				9E1D04A71E6C5CCC00D1D6A5 /* ServerManager.swift */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
@@ -277,14 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E8C2C901E27E608007A06EA /* DBProvider.swift in Sources */,
 				9E27A7EA1E14BEA200DB4D66 /* MapVC.swift in Sources */,
-				9EBB92A81E5968D7002F79C4 /* AuthProvider.swift in Sources */,
-				9EB9388D1E346D2800370FE5 /* Point.swift in Sources */,
 				9E8C2C8E1E27E4AF007A06EA /* Constants.swift in Sources */,
-				9E22A63A1E2B1F5F0047C2A3 /* MapPointsHandler.swift in Sources */,
 				9EBB92A61E59665F002F79C4 /* SigninVC.swift in Sources */,
-				9EFE70B71E6C049F005D3FFB /* ServerManager.swift in Sources */,
+				9E1D04A81E6C5CCC00D1D6A5 /* ServerManager.swift in Sources */,
+				9EFE70B91E6C0BBD005D3FFB /* Points.swift in Sources */,
 				9E27A7E81E14BEA200DB4D66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
