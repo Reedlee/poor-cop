@@ -8,9 +8,6 @@ target 'turajol-ios' do
   # Pods for turajol-ios
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'Firebase'
-  pod 'Firebase/Database'
-  pod 'Firebase/Auth'
   pod 'Alamofire'
   pod 'SwiftyJSON'
 
