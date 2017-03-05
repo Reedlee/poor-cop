@@ -142,11 +142,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="Hnd-cO-6m5">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KsR-Dy-zbO">
-                            <connections>
-                                <action selector="logout:" destination="BYZ-38-t0r" id="A5x-yF-3dc"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KsR-Dy-zbO"/>
                     </navigationItem>
                     <connections>
                         <outlet property="myMap" destination="DAu-wW-iia" id="cix-rW-Yvf"/>

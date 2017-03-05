@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class SigninVC: UIViewController {
     
@@ -20,6 +19,5 @@ class SigninVC: UIViewController {
         super.viewDidLoad()
         
 
-        // Do any additional setup after loading the view.
     }
 }

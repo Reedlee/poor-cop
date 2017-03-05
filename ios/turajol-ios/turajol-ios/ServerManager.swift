@@ -23,7 +23,7 @@ class ServerManager {
     private func get(_ api: String, completion: @escaping (JSON)-> Void, errorBlock: @escaping (String)-> Void) {
 
         let APIaddress =  "\(url)\(api)"
-        let headers = ["Accept": "application/json"]
+        let headers: HTTPHeaders = ["Accept": "application/json", "Content-type": "application/json"]
         
         Alamofire.request(APIaddress, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response:DataResponse<Any>) in
             switch response.result {
@@ -74,7 +74,24 @@ class ServerManager {
         
     }
     
-    func getPoints(_ completion: @escaping (Points) -> Void, error: @escaping (String) -> Void) -> Void {
+    private func delete(_ api: String, completion: @escaping (JSON)-> Void, errorBlock: @escaping (String)-> Void)  {
+        let APIaddress = "\(url)\(api)"
+        let headers: HTTPHeaders = ["Accept": "application/json", "Content-type": "application/json"]
+        
+        Alamofire.request(APIaddress, method: .delete, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { (response: DataResponse<Any>) in
+            
+            switch response.result {
+            case.success:
+                let encodedData = NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue)
+                let json =  JSON.init(parseJSON: encodedData! as String)
+                completion(json)
+            case.failure(let error):
+                errorBlock(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getAllPoints(_ completion: @escaping (Points) -> Void, error: @escaping (String) -> Void) {
         let api = ""
         self.get(api, completion: { (json) in
             let points = Points(json: json)
@@ -82,7 +99,24 @@ class ServerManager {
         }, errorBlock: error)
     }
     
-    func createPoint(latitude: Double, longitude: Double, completion: @escaping (Points) -> Void, error: @escaping (String) -> Void) -> Void {
+    func confirmPoint(withId: Int, completion: @escaping (Points) -> Void, error: @escaping (String) -> Void) {
+        let api = "points/\(withId)/confirm/"
+        self.get(api, completion: { (json) in
+            let points = Points(json: json)
+            completion(points)
+        }, errorBlock: error)
+    }
+    
+    func deletePoint(withId: Int, completion: @escaping (Points) -> Void, error: @escaping (String) -> Void) {
+        let api = "points/\(withId)/"
+        self.delete(api, completion: { (json) in
+            let points = Points(json: json)
+            completion(points)
+        }, errorBlock: error)
+    }
+
+    
+    func createPoint(latitude: Double, longitude: Double, completion: @escaping (Points) -> Void, error: @escaping (String) -> Void) {
         let api = "points/"
         let parameters: Parameters = ["point": [
                                 "latitude":"\(latitude)",
@@ -94,4 +128,5 @@ class ServerManager {
         }, errorBlock: error)
     }
     
+
 }

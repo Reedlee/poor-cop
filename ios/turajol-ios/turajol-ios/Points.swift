@@ -15,7 +15,7 @@ class Point {
     var longitude: Double!
     var created_at: String!
     var updated_at: String!
-    var deleted_at: String?
+    var deleted_at: String!
     var counter: Int!
     
     init(json: JSON) {
@@ -24,6 +24,7 @@ class Point {
         self.longitude = json["longitude"].doubleValue
         self.created_at = json["created_at"].stringValue
         self.updated_at = json["updated_at"].stringValue
+        self.deleted_at = json["deleted_at"].stringValue
         self.counter = json["counter"].intValue
         
     }

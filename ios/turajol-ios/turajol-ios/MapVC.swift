@@ -20,20 +20,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ServerManager.Instance.getPoints({ (points) in
-            self.points = points.values
-            self.displayAllPoints()
-            
-        }) { (error) in
-            print(error)
-        }
-
-        initializeLocationManager()
-        
         myMap.delegate = self
-        
-        
+        getAllPoints()
+        initializeLocationManager()
     }
     
     func initializeLocationManager() {
@@ -56,20 +45,75 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
             myMap.settings.allowScrollGesturesDuringRotateOrZoom = true
         }
     }
-
-    @IBAction func markOnMapByLocationBtn(_ sender: Any) {
-        pointAlert(lat: userLocation!.latitude, long: userLocation!.longitude)
-    }
-
-    @IBAction func logout(_ sender: Any) {
-
-    }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        pointAlert(lat: coordinate.latitude, long: coordinate.longitude)
+        createNewPointAlert(lat: coordinate.latitude, long: coordinate.longitude)
     }
     
-    func pointAlert(lat: Double, long: Double)
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        performMarkerAction(marker: marker)
+        return true
+    }
+
+    @IBAction func markOnMapByLocationBtn(_ sender: Any) {
+        createNewPointAlert(lat: userLocation!.latitude, long: userLocation!.longitude)
+    }
+    
+    func displayAllPoints() {
+        for point in points {
+            if point.deleted_at == "" {
+                let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+                let marker = GMSMarker(position: position)
+                
+                marker.title = "Осторожно ГАИ!"
+                marker.icon = UIImage(named: "police")
+                marker.userData = point.id
+                marker.map = self.myMap
+            }
+        }
+    }
+    
+    private func getAllPoints() {
+        ServerManager.Instance.getAllPoints({ (points) in
+            self.points = points.values
+            self.displayAllPoints()
+            
+        }) { (error) in
+            print(error)
+        }
+    }
+    
+    private func createPoint(lat: Double, long: Double) {
+        ServerManager.Instance.createPoint(latitude: lat, longitude: long, completion: { (points) in
+            self.alertTheUser(title: "Точка успешно добавлена")
+            self.points = points.values
+            self.displayAllPoints()
+        }, error: { (error) in
+            print(error)
+        })
+    }
+    
+    private func confirmPoint(withId: Int) {
+        ServerManager.Instance.confirmPoint(withId: withId, completion: { (points) in
+            self.points = points.values
+            self.displayAllPoints()
+        }) { (error) in
+            print(error)
+        }
+    }
+    
+    private func deletePoint(withId: Int) {
+        ServerManager.Instance.deletePoint(withId: withId, completion: { (points) in
+            self.points = points.values
+            self.displayAllPoints()
+        }) { (error) in
+            print(error)
+        }
+    }
+    
+    
+    func createNewPointAlert(lat: Double, long: Double)
     {
         let title = "Вы уверены что хотите отметить эту точку?"
         let message = "latidude: \(lat) \nlongitude: \(long)"
@@ -77,12 +121,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let accept = UIAlertAction(title: "Да", style: .default) { (alertAction: UIAlertAction) in
-            ServerManager.Instance.createPoint(latitude: lat, longitude: long, completion: { (points) in
-                self.points = points.values
-                self.displayAllPoints()
-            }, error: { (error) in
-                print(error)
-            })
+            self.createPoint(lat: lat, long: long)
         }
         let cancel = UIAlertAction(title: "Нет", style: .default, handler: nil)
         
@@ -92,32 +131,37 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
         present(alert, animated: true, completion: nil)
     }
     
-    func displayAllPoints() {
-        for point in points {
-            let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
-            let marker = GMSMarker(position: position)
-            marker.title = "Осторожно ГАИ!"
-            marker.icon = UIImage(named: "police")
-            marker.map = self.myMap
+    
+    private func performMarkerAction(marker: GMSMarker) {
+        let markerId = marker.userData as! Int
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let confirm = UIAlertAction(title: "Подтвердить точку", style: .default) { (action) in
+            self.confirmPoint(withId: markerId)
+            self.alertTheUser(title: "Точка успешна подтверждена")
         }
+        let delete = UIAlertAction(title: "Удалить точку", style: .destructive) { (action) in
+            marker.map = nil
+            self.deletePoint(withId: markerId)
+            self.alertTheUser(title: "Точка успешно удалена")
+            marker.map = nil
+        }
+        let cancel = UIAlertAction(title: "Отмена", style: .default, handler: nil)
+        
+        alert.addAction(confirm)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
     
-    
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
-        marker.map = nil
-        return true
-    }
-    
-    
-    func alertTheUser(title: String, message: String)
-    {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "ОK", style: .default, handler: nil)
-        
+    private func alertTheUser(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
 
 }
+
 
