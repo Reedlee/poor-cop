@@ -18,8 +18,18 @@ class SigninVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if AuthProvider.Instance.isLoggedIn() {
+            performSegue(withIdentifier: MAP_SEGUE, sender: nil)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     @IBAction func login(_ sender: Any) {

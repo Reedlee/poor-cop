@@ -20,6 +20,7 @@
 		9EB9388D1E346D2800370FE5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9388C1E346D2800370FE5 /* Point.swift */; };
 		9EBB92A61E59665F002F79C4 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB92A51E59665F002F79C4 /* SigninVC.swift */; };
 		9EBB92A81E5968D7002F79C4 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBB92A71E5968D7002F79C4 /* AuthProvider.swift */; };
+		9EFE70B71E6C049F005D3FFB /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFE70B61E6C049F005D3FFB /* ServerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9EB9388C1E346D2800370FE5 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		9EBB92A51E59665F002F79C4 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		9EBB92A71E5968D7002F79C4 /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		9EFE70B61E6C049F005D3FFB /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		E414B751941BC5585AFDF4A5 /* Pods_turajol_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_turajol_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C34F18630BA814A3B70F3B /* Pods-turajol-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-turajol-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-turajol-ios/Pods-turajol-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +77,8 @@
 		9E27A7E61E14BEA200DB4D66 /* turajol-ios */ = {
 			isa = PBXGroup;
 			children = (
-				9E8C2C8C1E27E3D5007A06EA /* Plugins */,
+				9EFE70B51E6C048B005D3FFB /* Plugins */,
+				9E8C2C8C1E27E3D5007A06EA /* Firebase Plugins  */,
 				9E8C2C8B1E27E3CB007A06EA /* Model */,
 				9E8C2C8A1E27E3C6007A06EA /* View */,
 				9E8C2C891E27E3BA007A06EA /* Controller */,
@@ -114,12 +117,20 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		9E8C2C8C1E27E3D5007A06EA /* Plugins */ = {
+		9E8C2C8C1E27E3D5007A06EA /* Firebase Plugins  */ = {
 			isa = PBXGroup;
 			children = (
 				9E8C2C8F1E27E608007A06EA /* DBProvider.swift */,
 				9E22A6391E2B1F5F0047C2A3 /* MapPointsHandler.swift */,
 				9EBB92A71E5968D7002F79C4 /* AuthProvider.swift */,
+			);
+			name = "Firebase Plugins ";
+			sourceTree = "<group>";
+		};
+		9EFE70B51E6C048B005D3FFB /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				9EFE70B61E6C049F005D3FFB /* ServerManager.swift */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
@@ -273,6 +284,7 @@
 				9E8C2C8E1E27E4AF007A06EA /* Constants.swift in Sources */,
 				9E22A63A1E2B1F5F0047C2A3 /* MapPointsHandler.swift in Sources */,
 				9EBB92A61E59665F002F79C4 /* SigninVC.swift in Sources */,
+				9EFE70B71E6C049F005D3FFB /* ServerManager.swift in Sources */,
 				9E27A7E81E14BEA200DB4D66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

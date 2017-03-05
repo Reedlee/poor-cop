@@ -129,5 +129,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, Ma
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
+
 }
 
