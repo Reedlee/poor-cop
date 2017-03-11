@@ -17,7 +17,14 @@ class SigninVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        performSegue(withIdentifier: MAP_SEGUE, sender: nil)
+    }
+    
+    @IBAction func signUp(_ sender: Any) {
+        performSegue(withIdentifier: MAP_SEGUE, sender: nil)
     }
 }

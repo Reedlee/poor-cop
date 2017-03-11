@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Zi-Lv-S5p">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,7 +58,8 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="login:" destination="2Zi-Lv-S5p" eventType="touchUpInside" id="iJu-QI-vUh"/>
+                                            <action selector="login:" destination="2Zi-Lv-S5p" eventType="touchUpInside" id="Ocb-og-etj"/>
+                                            <segue destination="eNd-Fk-wcR" kind="show" identifier="MapVC" id="9lT-bg-Z3x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxh-40-b3s">
@@ -72,7 +72,8 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUp:" destination="2Zi-Lv-S5p" eventType="touchUpInside" id="twa-6V-gAD"/>
+                                            <action selector="signUp:" destination="2Zi-Lv-S5p" eventType="touchUpInside" id="jD8-n0-NjI"/>
+                                            <segue destination="eNd-Fk-wcR" kind="show" identifier="MapVC" id="OdP-L3-fPt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -114,14 +115,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAu-wW-iia" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="605"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="DAu-wW-iia" secondAttribute="height" multiplier="25:36" id="mvW-ny-rHL"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueM-Ra-31C">
-                                <rect key="frame" x="118" y="560" width="140" height="30"/>
+                                <rect key="frame" x="118" y="621" width="140" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UUR-tj-v3W"/>
                                     <constraint firstAttribute="width" constant="140" id="uRp-vg-wcm"/>
@@ -136,13 +134,18 @@
                         <constraints>
                             <constraint firstItem="DAu-wW-iia" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ea0-QK-O62"/>
                             <constraint firstAttribute="trailing" secondItem="DAu-wW-iia" secondAttribute="trailing" id="IIp-pC-Aji"/>
-                            <constraint firstItem="ueM-Ra-31C" firstAttribute="top" secondItem="DAu-wW-iia" secondAttribute="bottom" constant="20" id="SUY-BH-Y54"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ueM-Ra-31C" secondAttribute="bottom" constant="16" id="STS-Aa-GEc"/>
+                            <constraint firstItem="ueM-Ra-31C" firstAttribute="top" secondItem="DAu-wW-iia" secondAttribute="bottom" constant="16" id="SUY-BH-Y54"/>
                             <constraint firstItem="DAu-wW-iia" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UQ0-Nr-Gyk"/>
                             <constraint firstItem="ueM-Ra-31C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b6K-4Q-2Kb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="Hnd-cO-6m5">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KsR-Dy-zbO"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KsR-Dy-zbO">
+                            <connections>
+                                <action selector="logout:" destination="BYZ-38-t0r" id="EXG-Ct-dlw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myMap" destination="DAu-wW-iia" id="cix-rW-Yvf"/>
@@ -150,10 +153,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242" y="125"/>
+            <point key="canvasLocation" x="1018" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cnO-u8-SfD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eNd-Fk-wcR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Jsu-ah-Q2C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Q0N-dX-BxL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8CA-ZD-K50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="125"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="744" height="1392"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="OdP-L3-fPt"/>
+    </inferredMetricsTieBreakers>
 </document>

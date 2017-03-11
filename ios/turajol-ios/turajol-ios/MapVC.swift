@@ -12,8 +12,10 @@ import GoogleMaps
 class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     @IBOutlet weak var myMap: GMSMapView!
+    
     private var locationManager = CLLocationManager()
     private var userLocation: CLLocationCoordinate2D?
+
     
     private var points = [Point]()
     
@@ -23,6 +25,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
         myMap.delegate = self
         getAllPoints()
         initializeLocationManager()
+        initializeGoogleMaps()
     }
     
     func initializeLocationManager() {
@@ -35,15 +38,23 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locationManager.location?.coordinate {
             userLocation = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            
-            let camera = GMSCameraPosition.camera(withLatitude: userLocation!.latitude, longitude: userLocation!.longitude, zoom: 16)
-            myMap.camera = camera
-            
-            myMap.isMyLocationEnabled = true
-            myMap.settings.myLocationButton = true
-            myMap.settings.zoomGestures = true
-            myMap.settings.allowScrollGesturesDuringRotateOrZoom = true
         }
+    }
+    
+    func initializeGoogleMaps() {
+        var camera: GMSCameraPosition!
+        
+        if userLocation == nil {
+            camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(Constants.defaultLatitude), longitude: CLLocationDegrees(Constants.defaultLongitude), zoom: 16)
+        } else {
+            camera = GMSCameraPosition.camera(withLatitude: userLocation!.latitude, longitude: userLocation!.longitude, zoom: 16)
+        }
+        
+        myMap.camera = camera
+        myMap.isMyLocationEnabled = true
+        myMap.settings.myLocationButton = true
+        myMap.settings.zoomGestures = true
+        myMap.settings.allowScrollGesturesDuringRotateOrZoom = true
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
@@ -58,6 +69,10 @@ class MapVC: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     @IBAction func markOnMapByLocationBtn(_ sender: Any) {
         createNewPointAlert(lat: userLocation!.latitude, long: userLocation!.longitude)
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     func displayAllPoints() {
