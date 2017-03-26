@@ -131,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                         sendPointToServer(ownGeoPoint);
                         map.getOverlays().add(cop);
                         map.invalidate();
-
                     }
                 });
                 builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
@@ -306,6 +305,32 @@ public class MainActivity extends AppCompatActivity {
                             cop.setTitle("Здесь гаишник");
                             cop.setIcon(getResources().getDrawable(R.mipmap.police));
                             cop.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                            final int finalI = i;
+                            cop.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
+                                @Override
+                                public boolean onMarkerClick(Marker marker, MapView mapView) {
+                                    AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                                    builder.setTitle("Подтверждение точки");
+                                    builder.setMessage("Подтвердить данную точку?");
+                                    builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            int id=points.get(finalI).getId();
+                                            Toast.makeText(MainActivity.this,"id= "+id,Toast.LENGTH_LONG).show();
+                                                confirmPoint(id);
+                                        }
+                                    });
+                                    builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    });
+                                    AlertDialog dialog=builder.create();
+                                    dialog.show();
+                                    return false;
+                                }
+                            });
                             markers.add(cop);
                             map.getOverlays().add(cop);
                             map.invalidate();
@@ -357,6 +382,34 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("test2", call2.request().body()+"");
                 Log.d("test2", "----onFailure------");
                 Log.e("test2", call.request().toString());
+
+            }
+        });
+    }
+    public void confirmPoint(int id){
+
+        final PointsApi pointsApi=PointsApi.retrofit.create(PointsApi.class);
+
+        final Call<List<OwnGeoPoint>> call = pointsApi.confirmPoint(id);
+        call.enqueue(new Callback<List<OwnGeoPoint>>() {
+            @Override
+            public void onResponse(Call<List<OwnGeoPoint>> call, Response<List<OwnGeoPoint>> response) {
+                if(response.isSuccessful()){
+                    Log.d("test4", "-----isSuccess----");
+                    Log.d("test4", response.body().toString());
+                }else{
+                    Log.e("test4", "-----isFalse-----"+response.message());
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<OwnGeoPoint>> call2, Throwable t) {
+                Log.d("test5", "----onFailure------");
+                Log.e("test5", t.getMessage());
+                Log.e("test5", call2.request().body()+"");
+                Log.d("test5", "----onFailure------");
+                Log.e("test5", call.request().toString());
 
             }
         });

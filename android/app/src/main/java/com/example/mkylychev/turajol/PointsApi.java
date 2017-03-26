@@ -15,11 +15,13 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by myrzabek on 3/9/17.
@@ -37,6 +39,12 @@ public interface PointsApi {
 
     @POST("/points")
     Call<List<OwnGeoPoint>> createPointAbs(@Body OwnGeoPointRequest request);
+
+    @DELETE("/points/{id}")
+    Call<List<OwnGeoPoint>> deletePoint(@Path("id") int id);
+
+    @GET("/points/{id}/confirm")
+    Call<List<OwnGeoPoint>> confirmPoint(@Path("id") int id);
 
 
     OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
