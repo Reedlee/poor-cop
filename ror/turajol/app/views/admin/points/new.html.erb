@@ -1,6 +1,6 @@
 <h1> New Point</h1>
 
-<%= form_for @point do |f| %>
+<%= form_for [:admin,@point] do |f| %>
   <p>
     <%=	f.label :latitude, "Широта" %>
     <%= f.text_field :latitude %>

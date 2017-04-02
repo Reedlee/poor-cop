@@ -1,0 +1,13 @@
+<div>
+  <% @points.each do |point| %>
+      <p>
+        <%= "Широта: #{point.latitude}" %>
+        <%= "Долгота: #{point.longitude}" %>
+        <%= link_to "Число подтверждений: #{point.counter}", admin_confirm_path(point) %>
+        <%= link_to "Удалить точку", admin_point_path(point), method: :delete  %>
+      </p>
+  <% end %>
+</div>
+<div>
+  <%=	link_to "Добавить точку", new_admin_point_path  %>
+</div>
