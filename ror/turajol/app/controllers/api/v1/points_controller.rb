@@ -1,4 +1,4 @@
-module Api
+module Api::V1
   class PointsController < ApiController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
