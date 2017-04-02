@@ -4,11 +4,7 @@ module Admin
 
     def index
       @points = Point.active
-      respond_to do |format|
-        format.html
-      end
     end
-
 
     def new
       @point = Point.new
@@ -18,14 +14,10 @@ module Admin
       @point = Point.create(point_params)
       if @point.save
         flash[:success] = 'Точка успешно добавлена'
-        respond_to do |format|
-          format.html{redirect_to root_path}
-        end
+        redirect_to root_path
       else
         flash[:error] = "Не удалось добавить точку"
-        respond_to do |format|
-          format.html{render action: "new"}
-        end
+        render action: "new"
       end
     end
 
@@ -34,14 +26,10 @@ module Admin
       @point.increase_counter
       if @point.save
         flash[:success] = 'Точка успешно подтверждена'
-        respond_to do |format|
-          format.html{redirect_to root_path}
-        end
+        redirect_to root_path
       else
         flash[:error] = "Не удалось подтвердить точку"
-        respond_to do |format|
-          format.html{render redirect_to root_path}
-        end
+        render redirect_to root_path
       end
     end
 
@@ -50,14 +38,10 @@ module Admin
       @point.deleted_at = Time.now
       if @point.save
         flash[:notice] = 'Точка успешно удалена'
-        respond_to do|format|
-          format.html{redirect_to root_path}
-        end
+        redirect_to root_path
       else
         flash[:error] = "Не удалось удалить точку"
-        respond_to do|format|
-          format.html{redirect_to root_path, notice: 'not found'}
-        end
+        redirect_to root_path, notice: 'not found'
       end
     end
 
@@ -68,7 +52,7 @@ module Admin
     end
 
     def not_found
-      render json: { message: "point: '#{params[:id]}' not found" }, status: 404
+      render allert: "point: '#{params[:id]}' not found"
     end
 
   end

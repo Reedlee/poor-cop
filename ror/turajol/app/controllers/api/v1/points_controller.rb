@@ -4,9 +4,7 @@ module Api::V1
 
     def index
       @points = Point.active
-      respond_to do |format|
-        format.json {render json: @points, status: :ok}
-      end
+      render json: @points, status: :ok
     end
 
     def new
@@ -17,14 +15,10 @@ module Api::V1
       @point = Point.create(point_params)
       if @point.save
         flash[:success] = 'Точка успешно добавлена'
-        respond_to do |format|
-          format.json{render json: Point.active, status: :created}
-        end
+        render json: Point.active, status: :created
       else
         flash[:error] = "Не удалось добавить точку"
-        respond_to do |format|
-          format.json{render json: @point.errors, status: 400}
-        end
+        render json: @point.errors, status: 400
       end
     end
 
@@ -33,14 +27,10 @@ module Api::V1
       @point.increase_counter
       if @point.save
         flash[:success] = 'Точка успешно подтверждена'
-        respond_to do |format|
-          format.json{render json: Point.active, status: :created}
-        end
+        render json: Point.active, status: :created
       else
         flash[:error] = "Не удалось подтвердить точку"
-        respond_to do |format|
-          format.json{render json: @point.errors, status: 404}
-        end
+        render json: @point.errors, status: 404
       end
     end
 
@@ -49,14 +39,10 @@ module Api::V1
       @point.deleted_at = Time.now
       if @point.save
         flash[:notice] = 'Точка успешно удалена'
-        respond_to do|format|
-          format.json{render json: Point.all, status: :accepted}
-        end
+        render json: Point.all, status: :accepted
       else
         flash[:error] = "Не удалось удалить точку"
-        respond_to do|format|
-          format.json{render json: @point.errors, status: 500}
-        end
+        render json: @point.errors, status: 500
       end
     end
 
