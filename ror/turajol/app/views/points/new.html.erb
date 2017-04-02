@@ -2,10 +2,11 @@
 
 <%= form_for @point do |f| %>
   <p>
-    <%=	 f.label :lantitude, "Долгота" %>
-    <%= f.text_field :latitude %></p>
+    <%=	f.label :latitude, "Широта" %>
+    <%= f.text_field :latitude %>
+  </p>
   <p>
-    <%=	 f.label :longitude, "Широта" %>
+    <%=	f.label :longitude, "Долгота" %>
     <%= f.text_field :longitude  %>
   </p>
   <p><%= f.submit "Создать точку" %></p>
