@@ -3,7 +3,7 @@
 //
 //= require action_cable
 //= require_self
-//= require_tree ./channels
+// TODO problem with cable tree
 
 (function() {
   this.App || (this.App = {});
