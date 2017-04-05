@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :points, :only => [:index, :new, :create, :destroy]
     get 'points/:id/confirm', to: 'points#confirm', as: 'point_confirm'
+
+    get 'users', to: 'users#index', as: 'users'
+    post 'users/activate', to: 'users#activate', as: 'activate'
   end
 end
