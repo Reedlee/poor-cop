@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219173406) do
+ActiveRecord::Schema.define(version: 20170404091558) do
 
   create_table "points", force: :cascade do |t|
     t.string   "latitude",               null: false
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20170219173406) do
     t.datetime "deleted_at"
     t.integer  "counter",    default: 0, null: false
     t.index ["deleted_at"], name: "index_points_on_deleted_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "phone",             limit: 24, null: false
+    t.string   "verification_code", limit: 10
+    t.datetime "code_confirmed_at"
+    t.string   "token"
+    t.datetime "token_expired_at"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["phone"], name: "index_users_on_phone", unique: true
+    t.index ["token"], name: "index_users_on_token", unique: true
   end
 
 end

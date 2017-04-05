@@ -3,7 +3,7 @@
       <p>
         <%= "Широта: #{point.latitude}" %>
         <%= "Долгота: #{point.longitude}" %>
-        <%= link_to "Число подтверждений: #{point.counter}", admin_confirm_path(point) %>
+        <%= link_to "Число подтверждений: #{point.counter}", admin_point_confirm_path(point) %>
         <%= link_to "Удалить точку", admin_point_path(point), method: :delete  %>
       </p>
   <% end %>
