@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   validates :phone, presence: true, format: {with: PHONE_FORMAT, message: MESSAGE_ERORR_FORMAT}
 
-  before_create :set_verification_code, :send_verification_code
+  before_create :set_verification_code
 
   def confirm_phone(verification_code)
     if self.verification_code == verification_code
