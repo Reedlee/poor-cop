@@ -1,5 +1,5 @@
 module Api
-  class ApiController < ActionController::Base
+  class ApiController < ApplicationController
     protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
     before_action :authenticate
 
@@ -15,7 +15,7 @@ module Api
 
     def render_unauthorized
       self.headers['WWW-Authenticate'] = 'Token realm="Application"'
-      render json: {message: 'Вы не авторизованы'}, status: 401
+      render json: {message: t(:auth_error)}, status: 401
     end
   end
 end
