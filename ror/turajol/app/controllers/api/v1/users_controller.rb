@@ -1,26 +1,25 @@
 module Api::V1
   class UsersController < ::Api::ApiController
-    rescue_from ActiveRecord::RecordNotFound, with: :not_found
     skip_before_action :authenticate
 
     def start_registration
-      @user = User.new(user_params)
-      if @user.save
-        send_verification_code(@user)
-        render json: {message: 'You should confirm phone'}, status: :ok
+      user = User.new(user_params)
+      if user.save
+        send_verification_code(user)
+        render json: {message: t(:phone_confirm)}, status: :ok
       else
-        render json: @user.errors, status: 400
+        render json: user.errors, status: 400
       end
     end
 
     def confirm
-      @user = User.where(phone: user_params[:phone]).first
-      return render json: {message: 'Не правильный телефон. Попробуйте еще раз'}, status: 404 if @user.blank?
+      user ||= User.where(phone: user_params[:phone]).first
+      return render json: {message: t(:incorrect_phone)}, status: 404 if user.blank?
 
-      if @user.confirm_phone(user_params[:verification_code])
-        render json: {auth_token: @user.token}
+      if user.confirm_phone(user_params[:verification_code])
+        render json: {auth_token: user.token}, status: :ok
       else
-        render json: {message: 'Не правильный ОТП. Попробуйте еще раз'}, status: 404
+        render json: {message: t(:incorrect_verification_code)}, status: 404
       end
     end
 
@@ -30,10 +29,6 @@ module Api::V1
 
     def user_params
       params.require(:user).permit(:phone, :verification_code)
-    end
-
-    def not_found
-      render json: {message: "Пользователь с таким телефоном '#{user_params[:phone]}' не найден"}, status: 404
     end
   end
 end

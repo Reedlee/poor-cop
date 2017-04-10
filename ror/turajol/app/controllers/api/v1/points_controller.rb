@@ -3,8 +3,8 @@ module Api::V1
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
     def index
-      @points = Point.active
-      render json: @points, status: :ok
+      points = Point.active
+      render json: points, status: :ok
     end
 
     def new
@@ -12,22 +12,21 @@ module Api::V1
     end
 
     def create
-      @point = Point.create(point_params)
+      point = Point.create(point_params)
       if @point.save
         render json: Point.active, status: :created
       else
-        render json: @point.errors, status: 400
+        render json: point.errors, status: 400
       end
     end
 
     def confirm
-      @point = Point.find(params[:id])
-      @point.increase_counter
-      if @point.save
+      point ||= Point.find(params[:id])
+      point.increase_counter
+      if point.save
         render json: Point.active, status: :created
       else
-        flash[:error] = "Не удалось подтвердить точку"
-        render json: @point.errors, status: 404
+        render json: point.errors, status: 404
       end
     end
 
@@ -38,7 +37,7 @@ module Api::V1
     end
 
     def not_found
-      render json: { message: "point: '#{params[:id]}' not found" }, status: 404
+      render json: { message: t(:point_find_error, point_id: params[:id]) }, status: 404
     end
   end
 end

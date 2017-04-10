@@ -5,9 +5,9 @@ module Admin
     end
 
     def activate
-      @user = User.where(params[:phone]).first
-      if @user.confirm_phone(params[:verification_code])
-        flash[:notice] = "Пользователь #{@user.phone} активирован"
+      user = User.where(params[:phone]).first
+      if user.confirm_phone(params[:verification_code])
+        flash[:notice] = "Пользователь #{user.phone} активирован"
         redirect_to admin_users_url
       else
         flash[:error] = 'Не удалось зарегестрироваться'

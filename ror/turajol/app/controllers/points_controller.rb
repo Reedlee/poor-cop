@@ -1,4 +1,4 @@
-class PointsController < ApplicationController
+class PointsController < WebController
   def index
     @points = Point.active
   end

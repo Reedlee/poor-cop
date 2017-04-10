@@ -13,11 +13,11 @@ module Admin
     def create
       @point = Point.create(point_params)
       if @point.save
-        flash[:success] = 'Точка успешно добавлена'
+        flash[:success] = t(:point_add)
         redirect_to root_path
       else
-        flash[:error] = "Не удалось добавить точку"
-        render action: "new"
+        flash[:error] = t(:point_add_error)
+        render action: :new
       end
     end
 
@@ -25,11 +25,11 @@ module Admin
       @point = Point.find(params[:id])
       @point.increase_counter
       if @point.save
-        flash[:success] = 'Точка успешно подтверждена'
+        flash[:success] = t(:point_confirm)
         redirect_to root_path
       else
-        flash[:error] = "Не удалось подтвердить точку"
-        render redirect_to root_path
+        flash[:error] = t(:point_confirm_error)
+        redirect_to root_path
       end
     end
 
@@ -37,11 +37,11 @@ module Admin
       @point = Point.find(params[:id])
       @point.deleted_at = Time.now
       if @point.save
-        flash[:notice] = 'Точка успешно удалена'
+        flash[:notice] = t(:point_destroy)
         redirect_to root_path
       else
-        flash[:error] = "Не удалось удалить точку"
-        redirect_to root_path, notice: 'not found'
+        flash[:error] = t(:point_destroy_error)
+        redirect_to root_path
       end
     end
 
@@ -52,7 +52,7 @@ module Admin
     end
 
     def not_found
-      render allert: "point: '#{params[:id]}' not found"
+      render allert: t(:point_find_error, point_id: params[:id])
     end
 
   end
