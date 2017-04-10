@@ -1,8 +1,10 @@
 en:
   phone_confirm: 'You should confirm phone'
+  phone_format_error: 'Error. Only digital accepted and mask should be xxxyyyyyy'
   incorrect_phone: 'Error. You entered incorrect phone. Please try again.'
   incorrect_verification_code: 'Error. You entered incorrect validation_code. Please try again.'
   auth_error: 'Error. You should authorization before'
+  point_format_error: 'Error. Only digital, point accepted and mask should be xx.xxxxxxx'
   point_add: 'Point was added successfully'
   point_add_error: 'Error. Point was not added'
   point_confirm: 'Point was confirmed successfully'
