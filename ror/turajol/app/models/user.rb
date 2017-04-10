@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   PHONE_FORMAT = /\A\d{9}\z/
-  MESSAGE_ERORR_FORMAT = "Only digital accepted and mask should be 'xxxyyyyyy'"
+  MESSAGE_ERORR_FORMAT = I18n.t(:phone_format_error)
 
   validates :phone, presence: true, format: {with: PHONE_FORMAT, message: MESSAGE_ERORR_FORMAT}
 
